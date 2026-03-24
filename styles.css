@@ -348,6 +348,43 @@ ol li {
   margin-bottom: 10px;
 }
 
+.social-wrap {
+  margin-top: 20px;
+}
+
+.social-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: #f5ece2;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #f6ede4;
+  border: 1px solid #f6ede466;
+  border-radius: 999px;
+  padding: 7px 14px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background: #f5e6d7;
+  color: #2b2926;
+  transform: translateY(-1px);
+}
+
+.social-note {
+  margin: 10px 0 0;
+  opacity: 0.8;
+}
+
 .copyright {
   opacity: 0.75;
   margin-top: 24px;
