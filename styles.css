@@ -203,6 +203,7 @@ h2 {
   border-radius: 16px;
   padding: 12px 12px 18px;
   transition: transform 0.25s ease;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -257,9 +258,64 @@ h2 {
   color: var(--muted);
 }
 
+.card.missing::after {
+  content: "图片待上传";
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #7c4d2b;
+  background: #f3e0cf;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
 .works-note {
   margin: 6px 0 0;
   color: var(--muted);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: #0f0d0be6;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 60;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(1100px, 92vw);
+  max-height: 82vh;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px #00000066;
+}
+
+.lightbox p {
+  color: #f4ede4;
+  margin: 12px 0 0;
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #ffffff24;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .story,
