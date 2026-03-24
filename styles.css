@@ -71,7 +71,36 @@ main {
 
 .hero {
   padding: 88px 0 66px;
+  max-width: 100%;
+  min-height: 72vh;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #201a14cf 0%, #201a1478 52%, #201a1438 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff7ef;
   max-width: 760px;
+  padding: 0 52px;
 }
 
 .kicker {
@@ -100,15 +129,19 @@ h2 {
 
 .hero-copy {
   max-width: 560px;
-  color: var(--muted);
+  color: #f0e8de;
   margin-bottom: 30px;
+}
+
+.hero .kicker {
+  color: #e5d8ca;
 }
 
 .btn {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
-  background: #2f2a25;
+  color: #2b241e;
+  background: #f3e4d4;
   padding: 13px 22px;
   border-radius: 999px;
   font-weight: 600;
@@ -148,10 +181,20 @@ h2 {
   margin-bottom: 96px;
 }
 
+.group-title {
+  margin: 0 0 14px;
+  font-size: 1.65rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  margin-bottom: 28px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
@@ -175,27 +218,33 @@ h2 {
 }
 
 .tone-1 .thumb {
-  background-image: linear-gradient(135deg, #d9bca4, #f5e9dc);
+  background-image:
+    url("assets/interior-design/interior-bathroom-washi-wide.jpg"),
+    linear-gradient(135deg, #d9bca4, #f5e9dc);
 }
 
 .tone-2 .thumb {
-  background-image: linear-gradient(135deg, #a5ab8f, #ece8dc);
+  background-image:
+    url("assets/interior-design/interior-bathroom-washi-detail.jpg"),
+    linear-gradient(135deg, #a5ab8f, #ece8dc);
 }
 
 .tone-3 .thumb {
-  background-image: linear-gradient(135deg, #b5a89b, #e8ddd2);
+  background-image:
+    url("assets/interior-design/interior-dining-modern.jpg"),
+    linear-gradient(135deg, #b5a89b, #e8ddd2);
 }
 
 .tone-4 .thumb {
-  background-image: linear-gradient(135deg, #d7c6a8, #f7f2e9);
+  background-image:
+    url("assets/floral-vase/decor-vase-onyx-pedestal.jpg"),
+    linear-gradient(135deg, #d7c6a8, #f7f2e9);
 }
 
 .tone-5 .thumb {
-  background-image: linear-gradient(135deg, #7e8a73, #dde2d6);
-}
-
-.tone-6 .thumb {
-  background-image: linear-gradient(135deg, #c9b8aa, #f2ebe5);
+  background-image:
+    url("assets/floral-vase/textile-zigzag-pattern.jpg"),
+    linear-gradient(135deg, #7e8a73, #dde2d6);
 }
 
 .card h3 {
@@ -205,6 +254,11 @@ h2 {
 
 .card p {
   margin: 0;
+  color: var(--muted);
+}
+
+.works-note {
+  margin: 6px 0 0;
   color: var(--muted);
 }
 
@@ -248,6 +302,10 @@ ol li {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 680px) {
@@ -258,6 +316,11 @@ ol li {
 
   .hero {
     padding-top: 52px;
+    min-height: 62vh;
+  }
+
+  .hero-content {
+    padding: 0 20px;
   }
 
   .stats {
@@ -265,6 +328,10 @@ ol li {
   }
 
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 }
